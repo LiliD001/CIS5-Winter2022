@@ -1,0 +1,96 @@
+// 9 Sav9EdC4P5
+
+/* 
+ * File:   
+ * Author: Liliana Darch
+ * Created on Jan 21 7:30PM 
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>   // Format input 
+#include <cstdlib>   // 
+using namespace std;
+
+//Function Prototypes
+float rate(float, float);
+float cost(float, float);
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+ 
+    //Declare Variables
+    float newPrc, //price of an item one today
+          oldPrc, //price of an item one year ago
+          infltn, //estimates the inflation rate
+          prcntg, //Percentage 1.3339
+           cost1, //cost of an item next year 
+           cost2; //cost of an item in two years
+    char   again; //Hold yes or no input to repeat the program
+ 
+    do {
+        //Initialize or input i.e. set variable values
+        cout<<"Enter current price:"<<endl;
+        cout<<"Enter year-ago price:"<<endl;
+        cin>>newPrc>>oldPrc;
+    
+        //Map inputs -> outputs
+        infltn = rate(newPrc, oldPrc); //Calls the function rate and assign the value to infltn
+        cost1  = cost(infltn, newPrc); //Calls the function cost to calculate the cost of an item next year 
+        cost2  = cost(infltn, cost1);  //Calls the function cost to calculate the cost of an item in two years
+        
+    
+        //Display the outputs
+        cout<<fixed<<setprecision(2)<<showpoint;
+        cout<<"Inflation rate: "<<abs(infltn) * 100<<"%"<<endl; //Display the absolute value of the infltn variable 
+        cout<<endl;
+        cout<<"Price in one year: $"<<cost1<<endl;
+        cout<<"Price in two year: $"<<cost2<<endl;
+        
+        
+        //Repeat the program
+        cout<<endl<<"Again:"<<endl;
+        cin>>again;
+        
+        if ( again == 'Y' || again == 'y'){     
+        cout<<endl;
+        }
+   
+    } while ( again == 'Y' || again == 'y');    //Check if the user would like to try again
+
+    //Exit stage right or left!
+    return 0;
+}
+
+//*********************************************************
+// Definition of the function rate.                       *
+// This function uses two float parameters.               * 
+// It returns the inflation rate.                         *
+//*********************************************************
+
+
+float rate(float newPrc, float oldPrc)
+{
+    float infRate;                           
+    infRate =  ((oldPrc - newPrc) / oldPrc); // Calculate the inflation rate 
+
+    return infRate;
+}
+
+
+//*********************************************************
+// Definition of the function cost. Estimated price of    *
+// the item in one and in two years                       *
+//*********************************************************
+
+
+float cost(float infltn, float price)
+{
+    float cost;
+    cost = (abs(infltn) + 1); // assign the inflation rate to cost
+    cost = cost * price;      // calculates the price of an item for the following year
+
+    return cost;
+}

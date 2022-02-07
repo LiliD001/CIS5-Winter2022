@@ -1,0 +1,49 @@
+// 3 Gaddis_9thEd_Chap5_Prob13_MinMax
+
+/* 
+ * File:   main.cpp
+ * Author: Liliana Darch
+ * Created on January 20, 2019, 8:36 PM
+ * Purpose:  Display the Largest and Smallest
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    
+    //Declare Variables
+    int number, // input number
+           min, // smallest number entered
+           max; // largest  number entered
+    
+    
+    //Initialize or input i.e. set variable values
+    cin>>number;  
+    max = number; // Assign the first input to max number
+    min = number; // Assign the first input to min number
+    
+    //Map inputs -> outputs
+    
+    while (number != -99){  //Checking the end of the series
+        max = max < number ? number : max;  //Comparing the max to the new number inputed 
+        min = min > number ? number : min;  //Comparing the min to the new number inputed 
+        
+        cin>>number;
+    }
+    
+    //Display the outputs
+    cout<<"Smallest number in the series is "<<min<<endl;
+    cout<<"Largest  number in the series is "<<max;
+    //Exit stage right or left!
+    return 0;
+}

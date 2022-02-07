@@ -1,0 +1,42 @@
+//Gaddis_9thEd_Chap5_Prob7_PayInPennies
+
+/* 
+ * File:   main.cpp
+ * Author: Liliana Darch
+ * Created on January 20, 2019, 12:10 PM
+ * Purpose:  Payment in Pennies
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>   //Format library
+#include <math.h>    //Math library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Set the random number seed
+    
+    //Declare Variables
+    int nDays; // Number of days
+    
+    //Initialize or input i.e. set variable values
+    cin>>nDays;
+    
+    //Map inputs -> outputs
+   
+    
+    //Display the outputs
+    cout<<fixed<<setprecision(2)<<showpoint;
+    cout<<"Pay = $"<<setw(3)<<((pow(2,nDays) - 1) * 0.01); // use power to calculate the pennies
+    
+    //Exit stage right or left!
+    return 0;
+}

@@ -1,0 +1,77 @@
+// 6 Sav9EdC4P1
+
+/* 
+ * File:   
+ * Author: Liliana Darch
+ * Created on January 20 10:00PM
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>   // Format Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+const float CNVLTRS = 0.264179; // Conversion: A liter is 0.264179 gallons
+
+//Function Prototypes
+float ltrGll(float, float); // Function to compute the number of miles per gallon
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+   
+    //Declare Variables
+    float  liters, // number of liters of gasoline consumed by the user’s car
+            miles, // number of miles traveled by the car 
+          gallons; // gallons 
+              
+    char    again; //Hold yes or no input
+    
+    
+    //Initialize or input i.e. set variable values
+    do{
+        cout<<"Enter number of liters of gasoline:"<<endl<<endl;
+        cout<<"Enter number of miles traveled:"<<endl<<endl;
+        cin>>liters>>miles;
+    
+    
+        //Map inputs -> outputs
+        gallons = CNVLTRS * liters;
+   
+
+        //Display the outputs
+        cout<<fixed<<setprecision(2)<<showpoint;
+        cout<<ltrGll(miles, gallons)<<endl;   
+   
+        cout<<"Again:"<<endl;
+   
+        cin>>again;
+        
+        if ( again == 'Y' || again == 'y'){
+        cout<<endl;
+    }
+   
+    } while ( again == 'Y' || again == 'y');
+    
+    
+    
+    
+    //Exit stage right or left!
+    return 0;
+}
+
+//*****************************************************************
+// Definition of function ltrGll. The miles parameter holds the   *
+// number of liters of gasoline consumed by the car and the miles *
+// holds the number of miles traveled by the car                  *
+//*****************************************************************
+
+float ltrGll(float miles, float gallons){
+    cout<<"miles per gallon:"<<endl;
+    return miles/gallons;
+}

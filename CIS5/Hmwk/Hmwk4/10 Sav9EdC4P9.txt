@@ -1,0 +1,82 @@
+// 10 Sav9EdC4P9
+
+/* 
+ * File:   
+ * Author: Liliana Darch    
+ * Created on Jan 7:30PM 
+ * Purpose:  Find the max of either two or three parameters of type 
+ *           float and returns the largest of them.
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+float prmtr2(float, float);
+float prmtr3(float, float, float);
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    
+     //Declare Variables
+    float num1, // input number 1
+          num2, // input number 2
+          num3, // input number 3
+          maxPar1, // largest  number entered
+          maxPar2;
+    
+    //Initialize or input i.e. set variable values
+    cout<<"Enter first number:"<<endl<<endl;
+    cout<<"Enter Second number:"<<endl<<endl;
+    cout<<"Enter third number:"<<endl<<endl;
+    cin>>num1>>num2>>num3;
+
+    
+    //Map inputs -> outputs
+    maxPar1 = prmtr2(num1, num2);
+    maxPar2 = prmtr3(num1, num2, num3);
+    //max2 = prmtr3(num1, num2, num3);
+   
+    
+    //Display the outputs
+  
+    cout<<"Largest number from two parameter function:"<<endl;
+    cout<<maxPar1<<endl<<endl;
+
+    cout<<"Largest number from three parameter function:"<<endl;
+    cout<<maxPar2<<endl;
+    
+    //Exit stage right or left!
+    return 0;
+}
+
+//*******************************************************
+// Definition of funtion prmtr2
+//
+//*******************************************************
+
+float prmtr2(float num1, float num2){
+    float max;
+    
+    max = num1 > num2 ? num1 : num2;
+    
+    return max;
+}
+
+float prmtr3(float num1, float num2, float num3){
+    float max;
+    
+    
+    max = (num1 > num2 && num1 > num3) ? num1 : 
+          (num2 > num1 && num2 > num3) ? num2 : num3;
+          
+    
+    return max;
+}

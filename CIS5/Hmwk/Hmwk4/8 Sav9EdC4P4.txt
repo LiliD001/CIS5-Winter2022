@@ -1,0 +1,75 @@
+// 8 Sav9EdC4P4
+
+/* 
+ * File:   
+ * Author: 
+ * Created on 
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>   //Format Library 
+#include <cstdlib>   // 
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+float rate(float, float);
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+ 
+    //Declare Variables
+    float newPrc, //price of an item one today
+          oldPrc, //price of an item one year ago
+          infltn; //estimates the inflation rate
+    char   again; //Hold yes or no input to repeat the program
+ 
+    do {
+        //Initialize or input i.e. set variable values
+        cout<<"Enter current price:"<<endl;
+        cout<<"Enter year-ago price:"<<endl;
+        cin>>newPrc>>oldPrc;
+    
+        //Map inputs -> outputs
+        infltn = rate(newPrc, oldPrc); //Calls the function rate and assign the value to infltn
+    
+        //Display the outputs
+        cout<<fixed<<setprecision(2)<<showpoint;
+        cout<<"Inflation rate: "<<abs(infltn)<<"%"<<endl; //Display the absolute value of the infltn variable 
+        
+        
+        //Repeat the program
+        cout<<endl<<"Again:"<<endl;
+        cin>>again;
+        
+        if ( again == 'Y' || again == 'y'){     
+        cout<<endl;
+        }
+   
+    } while ( again == 'Y' || again == 'y');    //Check if the user would like to try again
+
+    //Exit stage right or left!
+    return 0;
+}
+
+//***********************************************
+// Definition of the function rate.             *
+// This function uses two float parameters.     * 
+// It returns the inflation rate.               *
+//***********************************************
+
+
+float rate(float newPrc, float oldPrc)
+{
+    float infRate;
+    infRate =  ((oldPrc - newPrc) / oldPrc) * 100;
+   
+    return infRate;
+}

@@ -1,0 +1,49 @@
+// 4 Gaddis_9thEd_Chap5_Prob22_Rectangle
+
+/* 
+ * File:   main.cpp
+ * Author: Liliana Darch
+ * Created on January 20, 2019, 8:35 PM
+ * Purpose:  Rectangle with same number of rows as columns
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+  
+    //Declare Variables
+    int  number;
+    char chrter;
+    
+    
+    //Initialize or input i.e. set variable values
+    cin>>number;
+    cin>>chrter;
+    
+    //Map inputs -> outputs
+    for (int i = 0; i < number; i++){
+        
+        for (int j = 0; j < number; j++){
+            cout<<chrter;
+        }    
+        if(i != number-1){
+            cout<<endl;
+        }
+        
+    }
+    
+    //Display the outputs
+
+    //Exit stage right or left!
+    return 0;
+}

@@ -1,0 +1,109 @@
+// 7 Sav9EdC4P2
+
+/* 
+ * File:   
+ * Author: Liliana Darch
+ * Created on January 20 11:00PM
+ * Purpose:  Creation of Template to be used for all
+ *           future projects
+ */
+
+//System Libraries
+#include <iostream>  //Input/Output Library
+#include <iomanip>   // Format Library
+using namespace std;
+
+//User Libraries
+
+//Global Constants, no Global Variables are allowed
+//Math/Physics/Conversions/Higher Dimensions - i.e. PI, e, etc...
+const float CNVLTRS = 0.264179; // Conversion: A liter is 0.264179 gallons
+
+//Function Prototypes
+float ltrGll(float, float); // Function to compute the number of miles per gallon
+float glls(float);
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+   
+    //Declare Variables
+    float     car1,
+           liters1, // Car1 number of liters of gasoline consumed by the user’s car
+            miles1, // Car1 number of miles traveled by the car 
+              car2,
+           liters2, // Car2 number of liters of gasoline consumed by the user’s car
+            miles2, // Car2 number of miles traveled by the car 
+           gallons; // gallons 
+              
+    char    again; //Hold yes or no input
+    
+    
+    //Initialize or input i.e. set variable values
+    do{
+        
+        //Car 1 
+        cout<<"Car 1"<<endl;
+        cout<<"Enter number of liters of gasoline:"<<endl;
+        cout<<"Enter number of miles traveled:"<<endl;
+        cin>>liters1>>miles1;
+        
+        //Display the outputs
+        cout<<fixed<<setprecision(2)<<showpoint;
+        car1 =ltrGll(miles1, liters1);
+        //car1 = mpg;
+        cout<<"miles per gallon: "<<car1<<endl;
+        cout<<endl;
+        
+        
+        
+        //Car 2
+        cout<<"Car 2"<<endl;
+        cout<<"Enter number of liters of gasoline:"<<endl;
+        cout<<"Enter number of miles traveled:"<<endl;
+        cin>>liters2>>miles2;
+        
+        //Display the outputs
+        cout<<fixed<<setprecision(2)<<showpoint;
+        car2 = ltrGll(miles2, liters2);
+        //car2 = mpg;
+        cout<<"miles per gallon: "<<car2<<endl;   
+        cout<<endl;
+
+
+        //Compare which car is more ful efficient
+        if (car1 > car2){
+            cout<<"Car 1 is more fuel efficient"<<endl;
+        }
+        else{
+            cout<<"Car 2 is more fuel efficient"<<endl;
+        }
+        cout<<endl;
+        
+        
+        //Go back to menu
+        cout<<"Again:"<<endl;
+        cin>>again;
+        
+        if ( again == 'Y' || again == 'y'){
+        cout<<endl;
+        }
+   
+    } while ( again == 'Y' || again == 'y');
+    
+      
+    //Exit stage right or left!
+    return 0;
+}
+
+
+//*****************************************************************
+// Definition of function ltrGll. The miles parameter holds the   *
+// number of liters of gasoline consumed by the car and the miles *
+// holds the number of miles traveled by the car                  *
+//*****************************************************************
+
+float ltrGll(float miles, float liters){
+    float gallons = liters * CNVLTRS;
+    float mpg     = miles/gallons;
+    return mpg;
+}
