@@ -1,0 +1,26 @@
+The winner is Lili
+The winner is Lili
+The winner is Computer
+The winner is Computer
+The winner is Lili
+Game number 0! The winner is Computer
+Game number 1! The winner is Lili
+Game number 2! The winner is Computer
+Game number 3! The winner is Lili
+Game number 4! The winner is Computer
+Game number 0! The winner is Computer!
+Game number 1! The winner is Will!
+Game number 2! The winner is Will!
+Game number 3! The winner is Will!
+Game number 4! The winner is Will!
+Game number 5! The winner is Will!
+Game number 6! The winner is Computer!
+Game number 0! The winner is: Lili!
+Game number 1! The winner is: Computer!
+Game number 0! The winner is: Computer!
+Game number 1! The winner is: Lili!
+Game number 2! The winner is: Computer!
+Game number 3! The winner is: Computer!
+Game number 4! The winner is: Lili!
+Game number 0! The winner is: Computer!
+Game number 0! The winner is: Lili!
